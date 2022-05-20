@@ -7,24 +7,19 @@ const App = () => {
     price:1000
   }
 
-  const [name, setName] = useState(initialStates.name);
-  const [price, setPrice] = useState(initialStates.price);
-
-  const reset = () => {
-    setPrice(initialStates.price)
-    setName(initialStates.name)
-  }
+  const [state, setState] = useState(initialStates);
+  const {name , price} = state;
 
   return (
     <>
     <div>
       <p>現在の{name}は、{price}円です。</p>
-      <button onClick={() => setPrice(price +1)}>+1</button>
-      <button onClick={() => setPrice(price -1)}>-1</button>
-      <button onClick={reset}>reset</button>
+      <button onClick={() => setState({...state, price: price +1})}>+1</button>
+      <button onClick={() => setState({...state, price: price -1})}>-1</button>
+      <button onClick={() => setState(initialStates)}>reset</button>
     </div>
     <div>
-      <input value={name} onChange={e => setName(e.target.value)}/>
+      <input value={name} onChange={e => setState({...state, name: e.target.value})}/>
     </div>
     </>
   );
