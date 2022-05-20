@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
     <div>
-      <p>現在の{name}は、{price}円です。</p>
+      <p>現在の{name}は、{price}円です!</p>
       <button onClick={() => setState({...state, price: price +1})}>+1</button>
       <button onClick={() => setState({...state, price: price -1})}>-1</button>
       <button onClick={() => setState(initialStates)}>reset</button>
