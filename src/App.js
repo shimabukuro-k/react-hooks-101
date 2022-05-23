@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const App = () => {
 
@@ -9,6 +9,10 @@ const App = () => {
 
   const [state, setState] = useState(initialStates);
   const {name , price} = state;
+
+  useEffect(() => {
+    console.log("useEffct is invoked")
+  },[price]); 
 
   return (
     <>
