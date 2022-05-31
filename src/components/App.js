@@ -6,14 +6,14 @@ import EventForm from "./EventForm"
 import EventList from "./EventList" 
 import AppContext from '../contexts/AppContext';
 
-const App = () => {
+export const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
 
   return (
-    <AppContext.Provider value={"aaa"}>
+    <AppContext.Provider value={{state, dispatch}}>
       <div className="container-fluid">
-        <EventForm state={state} dispatch={dispatch}/>
-        <EventList state={state} dispatch={dispatch}/>
+        <EventForm/>
+        <EventList/>
       </div>
     </AppContext.Provider>
   );
