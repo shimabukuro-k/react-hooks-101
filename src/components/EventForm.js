@@ -41,7 +41,7 @@ export const EventForm = () => {
                 <textarea className="form-control" id="formEventBody" value={body} onChange={e => setBody(e.target.value)}/>
                 </div>
                 <button className="btn btn-primary" onClick={addEvent} disabled={unCreatable}>イベントを作成</button>
-                <button className="btn btn-danger" onClick={deleteAll} disabled={state.length === 0}>全てのイベントを削除</button>
+                <button className="btn btn-danger" onClick={deleteAll} disabled={state.events.length === 0}>全てのイベントを削除</button>
             </form>
         </>
     )
